@@ -26,7 +26,7 @@ import flask
 from urllib import urlencode
 from flask import request, render_template, g
 from flask import redirect, url_for
-from flask_material import Material 
+import flask_material
 
 from .utils import snake_case
 from .triggers import (ArticleOfTheDay,
@@ -62,7 +62,7 @@ ALL_TRIGGERS = [ArticleOfTheDay,
                 PopularPersonsBirthday]
 
 app = flask.Flask(__name__)
-material = Material(app)
+material = flask_material.Material(app)
 # Load default config first
 app.config.from_pyfile('../default.cfg', silent=True)
 # Override defaults if ifttt.cfg is present
