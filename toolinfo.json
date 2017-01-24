@@ -1,6 +1,6 @@
 {
-    "name" : "Wikipedia & Wikidata RSS Feeds",
-    "title" : "Featured content on Wikimedia wikis including Wikidata",
+    "name" : "wikipedia-ifttt-tool",
+    "title" : "Wikipedia & Wikidata RSS Feeds",
     "description" : "Use the tool to discover RSS for Wikipedia and Wikidata triggers without using IFTTT",
     "url" : "http://tools.wmflabs.org/ifttt-testing/ifttt/v1/rss-feeds",
     "keywords" : "rss-feeds, rss, feeds, wikipedia, wikidata",
