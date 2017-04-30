@@ -7,7 +7,7 @@
         <language>en-us</language>
         {% for feeds in data %}
             <item>
-                <comment>{{feeds.comment}}</comment>
+                <description>{{feeds.comment}}</description>
                 <pubDate>{{feeds.created_at}}</pubDate>
                 <date>{{feeds.date}}</date>
                 <image>
@@ -15,7 +15,7 @@
                 </image>
                 <size>{{feeds.size}}</size>
                 <title>{{feeds.title}}</title>
-                <link>{{feeds.url}}</link>
+                <url>{{feeds.url}}</url>
                 <user>{{feeds.user}}</user>
             </item>
         {% endfor %}

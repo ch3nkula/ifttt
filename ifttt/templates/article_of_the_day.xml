@@ -14,7 +14,7 @@
                 </image>
                 <description>{{feeds.summary}}</description>
                 <title>{{feeds.title}}</title>
-                <link>{{feeds.url}}</link>
+                <url>{{feeds.url}}</url>
             </item>
         {% endfor %}
     </channel>

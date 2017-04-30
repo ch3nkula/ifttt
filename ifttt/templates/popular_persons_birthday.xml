@@ -10,10 +10,10 @@
                 <title>{{feeds.user|e}}</title>
                 <year>Year of birth: {{feeds.year|e}}</year>
                 <age>{{feeds.age|e}} years old</age>
-                <comment>{{feeds.user|e}} was born in the year {{feeds.year|e}} and is celebrating {{feeds.age|e}} year birthday anniversary</comment>
+                <description>{{feeds.user|e}} was born in the year {{feeds.year|e}} and is celebrating {{feeds.age|e}} year birthday anniversary</description>
                 <date>{{feeds.date[0:10]|e}}</date>
                 <property>{{feeds.property|e}}</property>
-                <item>{{feeds.item|e}}</item>
+                <itemId>{{feeds.item|e}}</itemId>
             </item>
         {% endfor %}
     </channel>

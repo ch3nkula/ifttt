@@ -7,13 +7,13 @@
         <language>en-us</language>
         {% for feeds in data %}
             <item>
-                <comment>{{feeds.comment}}</comment>
+                <description>{{feeds.comment}}</description>
                 <pubDate>{{feeds.created_at}}</pubDate>
                 <date>{{feeds.date}}</date>
-                <description>Size: {{feeds.size}}</description>
+                <size>Size: {{feeds.size}}</size>
                 <url>{{feeds.url}}</url>
                 <title>{{feeds.item}}</title>
-                <guid>{{feeds.user}}</guid>
+                <user>{{feeds.user}}</user>
             </item>
         {% endfor %}
     </channel>

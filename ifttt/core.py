@@ -29,17 +29,17 @@ from flask import redirect, url_for
 from flask_material import Material
 
 from .utils import snake_case
-from .triggers import (ArticleOfTheDay,
-                       PictureOfTheDay,
-                       WordOfTheDay,
-                       ArticleRevisions,
-                       UserRevisions,
-                       NewArticle,
-                       NewHashtag,
-                       NewCategoryMember,
-                       CategoryMemberRevisions,
-                       ItemRevisions,
-                       PopularPersonsBirthday)
+from .triggers import (PictureOfTheDay,
+                      ArticleOfTheDay,
+                      WordOfTheDay,
+                      ArticleRevisions,
+                      UserRevisions,
+                      NewArticle,
+                      NewHashtag,
+                      NewCategoryMember,
+                      CategoryMemberRevisions,
+                      ItemRevisions,
+                      PopularPersonsBirthday)
 
 import logging
 LOG_FILE = 'ifttt.log'
@@ -49,8 +49,8 @@ logging.basicConfig(filename=LOG_FILE,
                     level=logging.DEBUG)
 
 
-ALL_TRIGGERS = [ArticleOfTheDay,
-                PictureOfTheDay,
+ALL_TRIGGERS = [PictureOfTheDay,
+                ArticleOfTheDay,
                 WordOfTheDay,
                 ArticleRevisions,
                 UserRevisions,

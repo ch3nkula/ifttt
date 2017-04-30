@@ -7,14 +7,14 @@
         <language>en-us</language>
         {% for feeds in data %}
             <item>
-                <comment>{{feeds.comment}}</comment>
+                <description>{{feeds.comment}}</description>
                 <pubDate>{{feeds.created_at}}</pubDate>
                 <date>{{feeds.date}}</date>
-                <comment>{{feeds.input_hashtag}}</comment>
+                <description>{{feeds.input_hashtag}}</description>
                 <image>
                     <url>{{feeds.media_url}}</url>
                 </image>
-                <comment>{{feeds.return_hashtags}}</comment>
+                <description>{{feeds.return_hashtags}}</description>
                 <size>{{feeds.size}}</size>
                 <title>{{feeds.title}}</title>
                 <url>{{feeds.url}}</url>

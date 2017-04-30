@@ -14,6 +14,7 @@ It currently supports the following triggers:
  - Page added to category
  - Page updated in category
  - Updates to an item
+ - Birthday of persons today
 
 # [WIP] Deploying to Wikimedia Labs
 

@@ -7,13 +7,13 @@
         <language>en-us</language>
         {% for feeds in data %}
             <item>
-                <comment>{{feeds.comment}}</comment>
+                <description>{{feeds.comment}}</description>
                 <pubDate>{{feeds.created_at}}</pubDate>
                 <date>{{feeds.date}}</date>
                 <image>
                     <url>{{feeds.media_url}}</url>
                 </image>
-                <description>Size: {{feeds.size}}</description>
+                <size>Size: {{feeds.size}}</size>
                 <title>{{feeds.title}}</title>
                 <url>{{feeds.url}}</url>
                 <guid>{{feeds.user}}</guid>

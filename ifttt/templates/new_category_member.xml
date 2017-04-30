@@ -7,7 +7,7 @@
         <language>en-us</language>
         {% for feeds in data %}
             <item>
-                <comment>{{feeds.category}}</comment>
+                <description>{{feeds.category}}</description>
                 <pubDate>{{feeds.created_at}}</pubDate>
                 <date>{{feeds.date}}</date>
                 <image>
