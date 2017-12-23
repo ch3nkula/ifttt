@@ -61,8 +61,24 @@ ALL_TRIGGERS = [PictureOfTheDay,
                 ItemRevisions,
                 PopularPersonsBirthday]
 
+# Trigger description list
+trigger_desc = {
+                "article_of_the_day": "This Trigger fires whenever the daily featured article on Wikipedia is updated.",
+                "word_of_the_day": "This Trigger fires whenever a new Word of the day is posted on Wiktionary.",
+                "article_revisions": "This Trigger fires each time someone edits a specified Wikipedia article.",
+                "user_revisions": "This Trigger fires each time a specified user makes a contribution to Wikipedia.",
+                "new_hashtag": "This Trigger fires every time a Wikipedia edit includes a specific hashtag.",
+                "new_article": "This Trigger fires every time a new Wikipedia article is created.",
+                "new_category_member": "This Trigger fires every time an article is added to a specific category.",
+                "category_member_revisions": "This Trigger fires every time an article is edited within a specific category.",
+                "item_revisions": "This trigger fires when a specific Wikidata item is edited or revised",
+                "popular_persons_birthday": "This Trigger fires when it finds people that has a birthday recently from WDQS."
+              }
+
+# Number of triggers (disregarding PotD)
+list_count = len(ALL_TRIGGERS) - 1
+
 app = flask.Flask(__name__)
-material = Material(app)
 # Load default config first
 app.config.from_pyfile('../default.cfg', silent=True)
 # Override defaults if ifttt.cfg is present
@@ -89,13 +105,13 @@ def unauthorized(e):
 def page_not_found(e):
     """The page you are looking for is not found on the server"""
     g.skip_after_request = True
-    return render_template('error_pages/404.html'), 404
+    return render_template('error_pages/404.html', count=list_count), 404
 
 @app.errorhandler(500)
 def internal_server_error(e):
     """There was an internal server error"""
     g.skip_after_request = True
-    return render_template('error_pages/500.html'), 500
+    return render_template('error_pages/500.html', count=list_count), 500
 
 
 @app.after_request
@@ -135,10 +151,8 @@ def test_setup():
 
 @app.route('/ifttt/v1/rss-feeds')
 def index():
-    """Return the list of feeds in material design card template"""
+    """Return the list of feeds in card template"""
     feeds = {'samples': {'feeds': {}}}
-    # Sum the ALL_TRIGGERS list
-    list_count = len(ALL_TRIGGERS)
     for feed in ALL_TRIGGERS:
         feed_name = snake_case(feed.__name__)
         feed_display_name = feed_name.replace("_", " ").capitalize()
@@ -150,7 +164,7 @@ def index():
     # for the HTML in feeds.html to render correctly and not 
     # in JSON format as the flask default Content-Type.
     g.skip_after_request = True
-    return render_template('index.html', data=feeds, count=list_count)
+    return render_template('index.html', data=feeds, trigger_desc=trigger_desc, count=list_count)
 
 
 @app.route('/ifttt/v1/status')

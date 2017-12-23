@@ -1,66 +1,48 @@
-{% extends "material/base.html" %}
-
-{% block title %} Internal Server Error - 500 {% endblock %}
-
-{% block head %}
-    {{ super() }}
-    <link href="//tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="//tools-static.wmflabs.org/cdnjs/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="http://materialdesignblog.com/Material-Design-Flipper/material/css/ripples.min.css" rel="stylesheet">
-    <link href="http://materialdesignblog.com/Material-Design-Flipper/material/css/material-wfont.min.css" rel="stylesheet">
-    <link href="http://materialdesignblog.com/Material-Design-Flipper/css/flipper.css" rel="stylesheet">
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Wikipedia RSS Feeds </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <style type="text/css">
-        #hover-card {
-            text-decoration: none;
-        }
-        #footer {
-            position: fixed;
-            height:70px;
-            bottom:0px;
-            left:0px;
-            right:0px;
-            margin-bottom:0px;
-        }
-    </style>
-{% endblock %}
-
-{% block content %}
-<div class="navbar navbar-default">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+    #five-0-0 {
+        height: 300px;
+    }
+    #search {
+        position: relative;
+        left: 50%;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-primary">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="{{url_for('index')}}">Wikipedia RSS Feeds&nbsp;&nbsp;&nbsp;<span class="icon-material-keyboard-arrow-right"></span>&nbsp;&nbsp;&nbsp;Total of {{count}} Wikipedia RSS feed(s)</a>
-    </div>
-</div>
-<div class="container">
-    <div id="example-row" class="row">
-            <div class="col-xs-12 col-md-12 full-card">
-                <div class="flip-card active-card">
-                    <div class="card label-info" style="background-color: #7ec0ee !important;color: white; height: 450px;">
-                        <h1 align="center"><br />Page not found</h1>
-                        <h6 align="center">500</h6>
-                    </div>
-                </div>
+        <a class="navbar-brand text-white" href="{{url_for('index')}}">Wiki(pedi&amp;dat)a RSS Feeds&nbsp;&nbsp;>&nbsp;&nbsp; Total of {{count}} Wiki(pedi&amp;dat)a RSS feed(s)</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0" id=search>
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-outline-default my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav><br />
+    <div class="container">
+        <div class="card text-center" id="five-0-0">
+            <div class="card-header">
+                Ops, we got an internal server error
+            </div><br /><br />
+            <div class="card-block">
+                <h4 class="card-title">500</h4>
+                <a href="{{url_for('index')}}" class="btn btn-primary">Back to Home</a>
             </div>
+        </div>
     </div>
-</div>
 
-<!-- JAVASCRIPT DEPENENCIES -->
-<script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="http://materialdesignblog.com/Material-Design-Flipper/material/js/ripples.min.js"></script>
-<script src="http://materialdesignblog.com/Material-Design-Flipper/material/js/material.min.js"></script>
+    <!-- JAVASCRIPT DEPENENCIES -->
+    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.1.1/jquery.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-{% endblock %}
-
-{% block footer %}
-<div class="navbar navbar-default" id="footer">
-    <div class="navbar-header">
-        <h3 style="position: relative;left: 180px;color: white;">(c) All rights reserved 2017 | Developed by Alangi Derick, supervised by Wikimedia Foundation</h3>
-    </div>
-</div>
-{% endblock %}
+</body>
+</html>
